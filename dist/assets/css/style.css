@@ -5077,7 +5077,7 @@ html {
     z-index: 1040;
     width: 100vw;
     height: 100vh;
-    background-color: #121212;
+    background-color: #0a1630;
 }
 
 .modal-backdrop.fade {
@@ -5085,7 +5085,7 @@ html {
 }
 
 .modal-backdrop.show {
-    opacity: 0.5;
+    opacity: 0.9;
 }
 
 .modal-header {
@@ -5555,4 +5555,64 @@ html {
 
 .footer {
     padding-bottom: 2rem;
+}
+
+.modal-content {
+    width: 100%;
+    padding: 2rem;
+    position: relative;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+}
+
+.modal__close {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    top: -2.2rem;
+    right: -2.2rem;
+    z-index: 1;
+    -webkit-transition: -webkit-transform .2s linear;
+    transition: -webkit-transform .2s linear;
+    -o-transition: transform .2s linear;
+    transition: transform .2s linear;
+    transition: transform .2s linear, -webkit-transform .2s linear;
+}
+
+.modal__close:focus {
+    outline: 0;
+}
+
+.modal__close:hover {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.modal__close-icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: #fff;
+}
+
+.modal__title {
+    margin-bottom: .5rem;
+    font-size: 1.6rem;
+    color: #ec3482;
+    font-weight: 500;
+}
+
+.modal__text {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    line-height: 1.2;
+    color: #121212;
+    font-weight: 500;
 }
