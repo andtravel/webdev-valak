@@ -5654,6 +5654,36 @@ html {
     color: #121212;
 }
 
+.portfolio {
+    position: relative;
+}
+
+.portfolio__slider {
+    position: relative;
+    height: 270px;
+    overflow: hidden;
+}
+
+.portfolio__slider:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #fff url("../img/ajax-loader.gif") center no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.portfolio__slider.slick-initialized {
+    overflow: visible;
+}
+
+.portfolio__slider.slick-initialized:after {
+    display: none;
+}
+
 .portfolio__item {
     max-width: 540px;
     position: relative;
@@ -5666,9 +5696,9 @@ html {
 }
 
 .portfolio__item:hover .portfolio__title {
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
 }
 
 .portfolio__link {
@@ -5702,6 +5732,47 @@ html {
     -o-transition: transform .2s linear;
     transition: transform .2s linear;
     transition: transform .2s linear, -webkit-transform .2s linear;
+}
+
+.portfolio__arrow {
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+}
+
+.portfolio__arrow:hover .portfolio__arrow-icon {
+    fill: #ec3482;
+}
+
+.portfolio__arrow:focus {
+    outline: 0;
+}
+
+.portfolio__arrow--prev {
+    left: -2rem;
+    -webkit-transform: translateY(-50%) rotate(180deg);
+    -ms-transform: translateY(-50%) rotate(180deg);
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.portfolio__arrow--next {
+    right: -2rem;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.portfolio__arrow-icon {
+    width: 20px;
+    height: 30px;
+    fill: #c5c5c5;
+    -webkit-transition: fill .1s linear;
+    -o-transition: fill .1s linear;
+    transition: fill .1s linear;
 }
 
 /* Vendor libs */
@@ -5771,6 +5842,7 @@ html {
     float: left;
     height: 100%;
     min-height: 1px;
+    padding: 0 1rem;
     display: none;
 }
 
@@ -5806,4 +5878,41 @@ html {
 
 .slick-arrow.slick-hidden {
     display: none;
+}
+
+.slick-dots {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    position: absolute;
+    bottom: -3rem;
+    left: 0;
+    z-index: 2;
+}
+
+.slick-dots li {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 .25rem;
+}
+
+.slick-dots li.slick-active button {
+    background-color: #ec3482;
+}
+
+.slick-dots button {
+    width: 1rem;
+    height: 1rem;
+    padding: 0;
+    border: 0;
+    background-color: #c5c5c5;
+    cursor: pointer;
+    font-size: 0;
+    color: transparent;
+}
+
+.slick-dots button:focus {
+    outline: 0;
 }
